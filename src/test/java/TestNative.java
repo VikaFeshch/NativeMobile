@@ -21,11 +21,11 @@ public class TestNative extends BaseClass {
     public void testSettingTempF() {
         object.temSelect(SettingObject.TEMP.F);
     }
-  /*  @Test
+    @Test
     public void testSettingTempC() {
         object.temSelect(SettingObject.TEMP.C);
     }
-*/
+
     @Test
     public void testSettingSpeedMPH() {
 
@@ -37,7 +37,7 @@ public class TestNative extends BaseClass {
         object.selectSpeedMetric(SettingObject.SPEED.M);
     }
 
- /*   @Test
+    @Test
     public void testSettingTime12() {
 
         object.timeSelect(SettingObject.TIME.TWELVE);
@@ -46,6 +46,31 @@ public class TestNative extends BaseClass {
     public void testSettingTime24() {
 
         object.timeSelect(SettingObject.TIME.TWENTY_FOUR);
-    }*/
+    }
 
+    @Test
+    public void testSettingNotifT() {
+
+        object.notifSelect(SettingObject.SETCHECKBOX.TRUE);
+    }
+    @Test
+    public void testSettingNotifF() {
+
+        object.notifSelect(SettingObject.SETCHECKBOX.FALSE);
+    }
+    @Test
+    public void testSettingStatBarT() {
+
+        object.statusBarSelect(SettingObject.SETCHECKBOX.TRUE);
+    }
+    @Test
+    public void testSettingStatBarF() {
+
+        object.statusBarSelect(SettingObject.SETCHECKBOX.FALSE);
+    }
+/*    @Test
+    public void testClickDone() {
+
+        object.clickDoneBut();
+    }*/
 }

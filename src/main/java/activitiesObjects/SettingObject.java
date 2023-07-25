@@ -22,6 +22,10 @@ public class SettingObject {
     By statusBarBut = By.id("com.weather.forecast.weatherchannel:id/tg_notifi_second_settings");
     By doneBut = By.id("com.weather.forecast.weatherchannel:id/tvDone");
 
+ /*   public void clickDoneBut(){
+        MobileElement doneButton = (MobileElement) driver.findElement(doneBut);
+        doneButton.click();
+    }*/
     public void selectSpeedMetric(SPEED speed) {
         MobileElement tempButton = (MobileElement) driver.findElement(speedButton);
         if (!tempButton.getText().equals(speed.getSp())) {
@@ -30,7 +34,6 @@ public class SettingObject {
                     .until(ExpectedConditions.presenceOfElementLocated(listSpeedMetrics));
 
             for (MobileElement l : listMetrics.findElements(By.className("android.widget.LinearLayout"))) {
-                //     System.out.println(l.findElement(By.className("android.widget.TextView")).getAttribute("text"));
                 if(l.findElement(By.className("android.widget.TextView")).getAttribute("text").equals(speed.getSp())){
                     l.click();
                     break;
@@ -54,13 +57,13 @@ public class SettingObject {
             }
         }
     }
- /*   public void statusBarSelect(SETCHECKBOX setStatBarBut) {
+    public void statusBarSelect(SETCHECKBOX setStatBarBut) {
         MobileElement statBarButton = (MobileElement) driver.findElement(statusBarBut);
         switch (setStatBarBut) {
             case TRUE  -> {
                 if (statBarButton.getAttribute("checked").equals("false")) {
                     statBarButton.click();
-                }
+               }
             }
             case FALSE -> {
                 if (statBarButton.getAttribute("checked").equals("true")) {
@@ -98,7 +101,7 @@ public class SettingObject {
                 }
             }
         }
-    }*/
+    }
 
     public enum TIME{
         TWELVE, TWENTY_FOUR;
